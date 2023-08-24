@@ -6,8 +6,8 @@ from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.html import strip_tags
-from django.utils.http import is_safe_url
-from django.utils.translation import ugettext_lazy as _
+from django.utils.http import url_has_allowed_host_and_scheme as is_safe_url
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import FormView
 
 from .forms import FormBuilder
