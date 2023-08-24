@@ -5,7 +5,7 @@ from .views import FormSubmission
 # This is ugly, but I gather there are still people running outdated Django versions.
 
 try:
-    from django.conf.urls import url
+    from django.urls import re_path as url
 except ImportError:
     from django.urls import path
 
@@ -17,3 +17,4 @@ else:
     urlpatterns = [
         url(r"^forms/submit/$", FormSubmission.as_view(), name="djangocms_forms_submissions"),
     ]
+````

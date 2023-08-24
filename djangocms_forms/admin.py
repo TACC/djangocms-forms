@@ -98,7 +98,7 @@ class FormSubmissionAdmin(admin.ModelAdmin):
         Add the export view to urls.
         """
         urls = super(FormSubmissionAdmin, self).get_urls()
-        from django.conf.urls import url
+        from django.urls import re_path as url
 
         def wrap(view):
             def wrapper(*args, **kwargs):
