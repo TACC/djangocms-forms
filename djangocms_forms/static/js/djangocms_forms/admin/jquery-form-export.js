@@ -1,4 +1,4 @@
-(function($) {
+window.addEventListener("load", function() { (function($) {
     $(function() {
         var form = $('#formsubmission_form'),
             formSelectorInput = $('select[id="id_form"]', form),
@@ -54,3 +54,4 @@
         }
     });
 })(django.jQuery);
+});
