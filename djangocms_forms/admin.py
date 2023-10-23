@@ -183,7 +183,7 @@ class FormSubmissionAdmin(admin.ModelAdmin):
                         if label not in headers:
                             headers.append(label)
 
-                if request.is_ajax():
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
                     data = {
                         'reloadBrowser': False,
                         'submissionCount': queryset.count(),
