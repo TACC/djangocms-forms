@@ -36,7 +36,7 @@ class FormSubmission(FormView):
     def form_valid(self, form, *args, **kwargs):
         handle_uploaded_files(form)
         form.save(request=self.request)
-        form_submission.send(sender=self.__class__, form=form.form_definition, cleaned_data=form.cleaned_data)
+        form_submission.send(sender=self.__class__, form=form.form_definition, cleaned_data=form.cleaned_data, request=self.request)
 
         if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
             response = {
