@@ -237,7 +237,7 @@ class FormField(models.Model):
 
     def get_choices(self):
         if self.choice_values:
-            regex = re.compile("[\s]*\n[\s]*")
+            regex = re.compile(r"[\s]*\n[\s]*")
             choices = regex.split(self.choice_values)
             return [(choice, choice) for choice in choices]
 
